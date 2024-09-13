@@ -1,11 +1,25 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color: #6C63FF;
+  --secondary-color: #6c757d;
+  --background-color: #EEF6EF;
+  --background-color1: #EEF6EF;
+  --text-color: #000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dark-theme {
+  --primary-color: #6C63FF;
+  --secondary-color: #808080;
+ 
+  --background-color: #252525;
+  --background-color1: #2C2C2C;
+  --text-color: #fff;
 }
+.App {
+  background-color: var(--background-color);
+  text-align: center;
+  height: auto;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -14,8 +28,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: var(--background-color);
   display: flex;
   flex-direction: column;
   align-items: center;

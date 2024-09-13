@@ -1,0 +1,301 @@
+:root {
+    --primary-color: #6C63FF;
+    --secondary-color: #6c757d;
+    --background-color: #fff;
+    --background-color1: #EEF6EF;
+    --text-color: #000;
+    --button-bg: #007bff;
+  --button-text: #ffffff;
+  --button-bg-hover: #0056b3;
+  --button-text-hover: #ffffff;
+  --border-color: #dddddd;
+  --add-button-bg: #007bff;
+  --add-button-text: #ffffff;
+  --background: #ffffff;
+  }
+  
+  .dark-theme {
+    --primary-color: #6C63FF;
+    --secondary-color: #808080;
+    --background-color: #121212;
+    --background-color1: #2C2C2C;
+    --text-color: #fff;
+    --button-bg: #444444;
+  --button-text: #ffffff;
+  --button-bg-hover: #555555;
+  --button-text-hover: #ffffff;
+  --border-color: #555555;
+  --add-button-bg: #444444;
+  --add-button-text: #ffffff;
+  --background: #333333;
+  }
+  .main-css{
+    background-color: var(--background-color);
+  }
+.todo-list-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: var(--text-color);
+    text-align: center;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+   width: 100%;
+  }
+  
+  .search-bar input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid  var(--primary-color);
+    margin-left: -90px;
+    width: 400px;
+    border-radius: 5px;
+  }
+  
+  .search-bar button {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    
+  }
+  #button1 {
+    height: 35px;
+    width: 60px;
+    margin-right: -5px;
+  }
+  
+  #button2 {
+    height: 35px;
+    width: 34px;
+    margin-right: -60px;
+  }
+  .note-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .note-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    color: var(--text-color);
+    margin-left: -30px;
+  }
+  
+  .note-item input {
+    margin-right: 10px;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  .note-item button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .note-item button svg {
+    fill: red;
+  }
+  /* ... (existing styles) */
+
+.new-note-modal {
+    position: fixed;
+    top: 30%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    background-color: var(--background-color);
+    padding: 20px;
+    border: 1px solid var(--background-color);
+    height: 20%;
+    width: 20%;
+    border-radius: 5px;
+  }
+  
+  .new-note-modal input {
+    width: 90%;
+    padding: 10px;
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  
+  .modal-buttons button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 50px;
+    border-radius: 5px;
+  }
+  #canbutton{
+     margin-right: 130px;
+     color: var(--primary-color);
+     background-color: var(--background-color);
+     border: 1px solid var(--primary-color);
+  }
+  #appbutton{
+    margin-right: 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+  .emp{
+    color: var(--text-color);
+  }
+/* ... (existing styles) */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align items to the left and right */
+  }
+/* ... (existing styles) */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .search-bar .buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .todo-list-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .search-bar .buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar .buttons button {
+    padding: 10px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .note-list {
+    list-style: none;
+    padding: 0;
+  }
+  .hrline{
+    border: 1px solid var(--primary-color);
+  margin: 10px 0;
+  }
+  .note-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    overflow: visible;
+
+  }
+  
+  .note-item input {
+    margin-right: 10px;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  .note-item button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .note-item button svg {
+    fill: red;
+  }
+  
+  .add-button {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 52%;
+    margin-left: 110%;
+    height: 50px;
+    width: 50px;
+    padding-top: 8px;
+    border-radius: 50%;
+    font-size: 30px;
+  }
+  .emp{
+    margin-left: 80px;
+  }
+  
+  /* Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-menu {
+    display: block;
+    position: absolute;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 10px;
+    z-index: 1;
+    width: 150px;
+  }
+  
+  .dropdown-menu li {
+    list-style: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  
+  
+  
+
+  
