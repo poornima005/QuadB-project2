@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/poornima005/QuadB-project2.git/static/css/main.67107342.css",
-    "main.js": "/poornima005/QuadB-project2.git/static/js/main.d6868686.js",
-    "static/js/453.92bb4f36.chunk.js": "/poornima005/QuadB-project2.git/static/js/453.92bb4f36.chunk.js",
-    "static/media/empty.png": "/poornima005/QuadB-project2.git/static/media/empty.36d936a2e313b655d638.png",
-    "static/media/logo.svg": "/poornima005/QuadB-project2.git/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/poornima005/QuadB-project2.git/index.html",
-    "main.67107342.css.map": "/poornima005/QuadB-project2.git/static/css/main.67107342.css.map",
-    "main.d6868686.js.map": "/poornima005/QuadB-project2.git/static/js/main.d6868686.js.map",
-    "453.92bb4f36.chunk.js.map": "/poornima005/QuadB-project2.git/static/js/453.92bb4f36.chunk.js.map"
+    "main.css": "/poornima005/Quadb-project2--main.git/static/css/main.67107342.css",
+    "main.js": "/poornima005/Quadb-project2--main.git/static/js/main.681e4e7c.js",
+    "static/js/453.92bb4f36.chunk.js": "/poornima005/Quadb-project2--main.git/static/js/453.92bb4f36.chunk.js",
+    "static/media/empty.png": "/poornima005/Quadb-project2--main.git/static/media/empty.36d936a2e313b655d638.png",
+    "static/media/logo.svg": "/poornima005/Quadb-project2--main.git/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/poornima005/Quadb-project2--main.git/index.html",
+    "main.67107342.css.map": "/poornima005/Quadb-project2--main.git/static/css/main.67107342.css.map",
+    "main.681e4e7c.js.map": "/poornima005/Quadb-project2--main.git/static/js/main.681e4e7c.js.map",
+    "453.92bb4f36.chunk.js.map": "/poornima005/Quadb-project2--main.git/static/js/453.92bb4f36.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.67107342.css",
-    "static/js/main.d6868686.js"
+    "static/js/main.681e4e7c.js"
   ]
 }
