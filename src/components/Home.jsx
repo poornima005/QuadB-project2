@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './todo.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import    { faMoon, faEdit, faTrash, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import empty from "./empty.png";
 
 function Home() {
@@ -12,6 +12,8 @@ function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [filter, setFilter] = useState('All');
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [isEditNoteModalOpen, setIsEditNoteModalOpen] = useState(false);
+  const [noteToEdit, setNoteToEdit] = useState({});
 
   const handleAddNote = () => {
     if (newNote.trim() !== '') {
@@ -44,6 +46,25 @@ function Home() {
     setDropdownVisible(false);
   };
 
+  const handleEditNote = (id) => {
+    const note = notes.find((note) => note.id === id);
+    if (note) {
+      setNoteToEdit(note);
+      setIsEditNoteModalOpen(true);
+    }
+  };
+
+  const handleSaveEditedNote = (editedText) => {
+    setNotes(
+      notes.map((note) => (note.id === noteToEdit.id ? { ...note, text: editedText } : note))
+    );
+    setIsEditNoteModalOpen(false);
+  };
+
+  const handleDeleteNote = (id) => {
+    setNotes(notes.filter((note) => note.id !== id));
+  };
+
   const filteredNotes = notes.filter((note) => {
     const matchesSearch = note.text.toLowerCase().includes(searchTerm.toLowerCase());
     if (filter === 'All') return matchesSearch;
@@ -55,7 +76,7 @@ function Home() {
   useEffect(() => {
     const storedDarkMode = localStorage.getItem('darkMode');
     if (storedDarkMode !== null) {
-      setDarkMode(JSON.parse(storedDarkMode));
+      setDarkMode(JSON.parse(storedDarkMode));   
     }
   }, []);
 
@@ -64,7 +85,7 @@ function Home() {
   }, [darkMode]);
 
   return (
-    <div className="todo-list-container" data-theme={darkMode ? 'dark' : 'light'}>
+    <div className=" main-css todo-list-container" data-theme={darkMode ? 'dark' : 'light'}>
       <h1>TODO LIST</h1>
       <div className="search-bar">
         <input
@@ -72,7 +93,7 @@ function Home() {
           placeholder="Search note..."
           value={searchTerm}
           onChange={handleSearch}
-        ></input>
+        />
         <div className="buttons">
           <div className="dropdown">
             <button id='button1' onClick={() => setDropdownVisible(!dropdownVisible)}>
@@ -105,6 +126,20 @@ function Home() {
           </div>
         </div>
       )}
+      {isEditNoteModalOpen && (
+        <div className="new-note-modal">
+          <input
+            type="text"
+            placeholder="Edit note..."
+            value={noteToEdit.text}
+            onChange={(e) => setNoteToEdit({ ...noteToEdit, text: e.target.value })}
+          />
+          <div className="modal-buttons">
+            <button id='canbutton' onClick={() => setIsEditNoteModalOpen(false)}>CANCEL</button>
+            <button id='appbutton' onClick={() => handleSaveEditedNote(noteToEdit.text)}>SAVE</button>
+          </div>
+        </div>
+      )}
       {filteredNotes.length === 0 ? (
         <div className="empty-list-message">
           <img src={empty} alt="Empty list image" />
@@ -120,6 +155,14 @@ function Home() {
                 onChange={() => handleToggleComplete(note.id)}
               />
               <span className={note.completed ? 'completed' : ''}>{note.text}</span>
+              <div className="note-actions">
+                <button onClick={() => handleEditNote(note.id)}>
+                  <FontAwesomeIcon className='edit' icon={faEdit} />
+                </button>
+                <button onClick={() => handleDeleteNote(note.id)}>
+                  <FontAwesomeIcon className='edit' icon={faTrash} />
+                </button>
+              </div>
             </li>
           ))}
         </ul>

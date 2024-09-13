@@ -5,115 +5,120 @@
     --background-color1: #EEF6EF;
     --text-color: #000;
     --button-bg: #007bff;
-  --button-text: #ffffff;
-  --button-bg-hover: #0056b3;
-  --button-text-hover: #ffffff;
-  --border-color: #dddddd;
-  --add-button-bg: #007bff;
-  --add-button-text: #ffffff;
-  --background: #ffffff;
-  }
-  
-  .dark-theme {
+    --button-text: #ffffff;
+    --button-bg-hover: #0056b3;
+    --button-text-hover: #ffffff;
+    --border-color: #dddddd;
+    --add-button-bg: #007bff;
+    --add-button-text: #ffffff;
+    --background: #ffffff;
+    --edit: #CDCDCD;
+}
+
+.dark-theme {
     --primary-color: #6C63FF;
     --secondary-color: #808080;
     --background-color: #121212;
     --background-color1: #2C2C2C;
     --text-color: #fff;
     --button-bg: #444444;
-  --button-text: #ffffff;
-  --button-bg-hover: #555555;
-  --button-text-hover: #ffffff;
-  --border-color: #555555;
-  --add-button-bg: #444444;
-  --add-button-text: #ffffff;
-  --background: #333333;
-  }
-  .main-css{
+    --button-text: #ffffff;
+    --button-bg-hover: #555555;
+    --button-text-hover: #ffffff;
+    --border-color: #555555;
+    --add-button-bg: #444444;
+    --add-button-text: #ffffff;
+    --background: #333333;
+    --edit:#CDCDCD;
+}
+
+.main-css {
     background-color: var(--background-color);
-  }
+}
+
 .todo-list-container {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  h1 {
+}
+
+h1 {
     color: var(--text-color);
     text-align: center;
-  }
-  
-  .search-bar {
+}
+
+/* Combined Search Bar Styles */
+.search-bar {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-   width: 100%;
-  }
-  
-  .search-bar input {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.search-bar input {
     flex-grow: 1;
     padding: 10px;
-    border: 1px solid  var(--primary-color);
-    margin-left: -90px;
-    width: 400px;
+    border: 1px solid var(--primary-color);
     border-radius: 5px;
-  }
-  
-  .search-bar button {
+    max-width: 100%;
+}
+
+.search-bar .buttons {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar button {
     padding: 10px;
+    margin-left: 10px;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--button-text);
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    
-  }
-  #button1 {
+}
+
+#button1, #button2 {
     height: 35px;
-    width: 60px;
     margin-right: -5px;
-  }
-  
-  #button2 {
-    height: 35px;
-    width: 34px;
-    margin-right: -60px;
-  }
-  .note-list {
+}
+
+.note-list {
     list-style: none;
     padding: 0;
-  }
-  
-  .note-item {
+}
+
+.note-item {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
     padding: 10px;
-    border: none;
     color: var(--text-color);
-    margin-left: -30px;
-  }
-  
-  .note-item input {
+    border: none;
+}
+
+.note-item input {
+    color: var(--text-color);
     margin-right: 10px;
-  }
-  
-  .completed {
-    text-decoration: line-through;
-    color: gray;
-  }
-  
-  .note-item button {
+}
+
+.note-item button {
     background-color: transparent;
     border: none;
     cursor: pointer;
-  }
-  
-  .note-item button svg {
-    fill: red;
-  }
-  /* ... (existing styles) */
+}
 
+.note-item button svg {
+    fill: red;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* New Note Modal */
 .new-note-modal {
     position: fixed;
     top: 30%;
@@ -121,159 +126,83 @@
     transform: translate(-50%, -50%);
     background-color: var(--background-color);
     padding: 20px;
-    border: 1px solid var(--background-color);
+    border: 1px solid var(--border-color);
     height: 20%;
     width: 20%;
     border-radius: 5px;
-  }
-  
-  .new-note-modal input {
+}
+
+.new-note-modal input {
     width: 90%;
     padding: 10px;
     background-color: var(--background-color);
     border: 1px solid var(--primary-color);
     border-radius: 5px;
-  }
-  
-  .modal-buttons {
+    color: var(--text-color);
+}
+
+.modal-buttons {
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
-  }
-  
-  .modal-buttons button {
+}
+
+.modal-buttons button {
     padding: 10px;
-    border: none;
-    cursor: pointer;
     margin-top: 50px;
     border-radius: 5px;
-  }
-  #canbutton{
-     margin-right: 130px;
-     color: var(--primary-color);
-     background-color: var(--background-color);
-     border: 1px solid var(--primary-color);
-  }
-  #appbutton{
+    cursor: pointer;
+}
+
+#canbutton {
+    margin-right: 130px;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+}
+
+#appbutton {
     margin-right: 20px;
     background-color: var(--primary-color);
-    color: #fff;
-  }
-  .emp{
-    color: var(--text-color);
-  }
-/* ... (existing styles) */
+    color: var(--button-text);
+}
 
-.search-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Align items to the left and right */
-  }
-/* ... (existing styles) */
-
-.search-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .search-bar .buttons {
-    display: flex;
-    align-items: center;
-  }
-  
-  .todo-list-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  .search-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .search-bar .buttons {
-    display: flex;
-    align-items: center;
-  }
-  
-  .search-bar .buttons button {
-    padding: 10px;
-    margin-left: 10px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .note-list {
-    list-style: none;
-    padding: 0;
-  }
-  .hrline{
-    border: 1px solid var(--primary-color);
-  margin: 10px 0;
-  }
-  .note-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none;
-    overflow: visible;
-
-  }
-  
-  .note-item input {
-    margin-right: 10px;
-  }
-  
-  .completed {
-    text-decoration: line-through;
-    color: gray;
-  }
-  
-  .note-item button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .note-item button svg {
-    fill: red;
-  }
-  
-  .add-button {
+/* Add Button */
+.add-button {
     display: block;
     text-align: center;
     padding: 10px;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--button-text);
     border: none;
     cursor: pointer;
-    margin-top: 52%;
+    margin-top: 70%;
     margin-left: 110%;
     height: 50px;
     width: 50px;
     padding-top: 8px;
     border-radius: 50%;
     font-size: 30px;
-  }
-  .emp{
+    position: relative;
+}
+
+.hrline {
+    border: 1px solid var(--primary-color);
+    margin: 10px 0;
+}
+
+.emp {
+    color: var(--text-color);
     margin-left: 80px;
-  }
-  
-  /* Dropdown Styling */
+}
+
+/* Dropdown */
 .dropdown {
     position: relative;
     display: inline-block;
-  }
-  
-  .dropdown-menu {
+}
+
+.dropdown-menu {
     display: block;
     position: absolute;
     background-color: var(--background-color);
@@ -285,17 +214,22 @@
     padding: 10px;
     z-index: 1;
     width: 150px;
-  }
-  
-  .dropdown-menu li {
+}
+
+.dropdown-menu li {
     list-style: none;
     padding: 8px 12px;
     cursor: pointer;
     font-size: 16px;
+}
+.edit{
+    justify-content: right;
+    color: var(--edit);
+}
+.note-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
   }
-  
-  
-  
-  
-
   
