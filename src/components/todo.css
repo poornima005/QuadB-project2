@@ -176,7 +176,7 @@ h1 {
     color: var(--button-text);
     border: none;
     cursor: pointer;
-    margin-top: 70%;
+    margin-top: 60%;
     margin-left: 110%;
     height: 50px;
     width: 50px;
@@ -185,7 +185,23 @@ h1 {
     font-size: 30px;
     position: relative;
 }
-
+.add-button1 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--button-text);
+    border: none;
+    cursor: pointer;
+    margin-top: 70%;
+    margin-left: 110%;
+    height: px;
+    width: 0px;
+    padding-top: 8px;
+    border-radius: 50%;
+    font-size: 30px;
+    position: relative;
+}
 .hrline {
     border: 1px solid var(--primary-color);
     margin: 10px 0;
@@ -231,5 +247,31 @@ h1 {
     align-items: center;
     justify-content: flex-end;
     margin-left: auto;
+  }
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .prev-button, .next-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .prev-button:disabled, .next-button:disabled {
+    background-color: #c7c7c7;
+    cursor: not-allowed;
+  }
+  
+  .prev-button:hover:not(:disabled), .next-button:hover:not(:disabled) {
+    background-color: var(--primary-color);
   }
   

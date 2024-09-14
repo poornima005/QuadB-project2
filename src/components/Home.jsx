@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './todo.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import    { faMoon, faEdit, faTrash, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faEdit, faTrash, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import empty from "./empty.png";
 
 function Home() {
@@ -14,6 +14,8 @@ function Home() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [isEditNoteModalOpen, setIsEditNoteModalOpen] = useState(false);
   const [noteToEdit, setNoteToEdit] = useState({});
+  const [currentPage, setCurrentPage] = useState(1); // For pagination
+  const notesPerPage = 4; // Changed to 4 notes per page
 
   const handleAddNote = () => {
     if (newNote.trim() !== '') {
@@ -73,10 +75,28 @@ function Home() {
     return true;
   });
 
+  // Pagination logic
+  const indexOfLastNote = currentPage * notesPerPage;
+  const indexOfFirstNote = indexOfLastNote - notesPerPage;
+  const currentNotes = filteredNotes.slice(indexOfFirstNote, indexOfLastNote);
+  const totalPages = Math.ceil(filteredNotes.length / notesPerPage);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
   useEffect(() => {
     const storedDarkMode = localStorage.getItem('darkMode');
     if (storedDarkMode !== null) {
-      setDarkMode(JSON.parse(storedDarkMode));   
+      setDarkMode(JSON.parse(storedDarkMode));   
     }
   }, []);
 
@@ -85,7 +105,7 @@ function Home() {
   }, [darkMode]);
 
   return (
-    <div className=" main-css todo-list-container" data-theme={darkMode ? 'dark' : 'light'}>
+    <div className="main-css todo-list-container" data-theme={darkMode ? 'dark' : 'light'}>
       <h1>TODO LIST</h1>
       <div className="search-bar">
         <input
@@ -112,6 +132,7 @@ function Home() {
           </button>
         </div>
       </div>
+
       {isAddingNote && (
         <div className="new-note-modal">
           <input
@@ -126,6 +147,7 @@ function Home() {
           </div>
         </div>
       )}
+
       {isEditNoteModalOpen && (
         <div className="new-note-modal">
           <input
@@ -140,35 +162,60 @@ function Home() {
           </div>
         </div>
       )}
+
       {filteredNotes.length === 0 ? (
         <div className="empty-list-message">
           <img src={empty} alt="Empty list image" />
           <p className='emp'>Empty...</p>
         </div>
       ) : (
-        <ul className="note-list">
-          {filteredNotes.map((note) => (
-            <li key={note.id} className="note-item">
-              <input
-                type="checkbox"
-                checked={note.completed}
-                onChange={() => handleToggleComplete(note.id)}
-              />
-              <span className={note.completed ? 'completed' : ''}>{note.text}</span>
-              <div className="note-actions">
-                <button onClick={() => handleEditNote(note.id)}>
-                  <FontAwesomeIcon className='edit' icon={faEdit} />
-                </button>
-                <button onClick={() => handleDeleteNote(note.id)}>
-                  <FontAwesomeIcon className='edit' icon={faTrash} />
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul className="note-list">
+            {currentNotes.map((note) => (
+              <li key={note.id} className="note-item">
+                <input
+                  type="checkbox"
+                  checked={note.completed}
+                  onChange={() => handleToggleComplete(note.id)}
+                />
+                <span className={note.completed ? 'completed' : ''}>{note.text}</span>
+                <div className="note-actions">
+                  <button onClick={() => handleEditNote(note.id)}>
+                    <FontAwesomeIcon className='edit' icon={faEdit} />
+                  </button>
+                  <button onClick={() => handleDeleteNote(note.id)}>
+                    <FontAwesomeIcon className='edit' icon={faTrash} />
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          {/* Pagination controls */}
+          <div className="pagination-controls">
+            <button
+              className="prev-button"
+              onClick={handlePrevPage}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </button>
+            <button
+              className="next-button"
+              onClick={handleNextPage}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
+          </div>
+        </>
       )}
+      
       <button className="add-button" onClick={() => setIsAddingNote(true)}>
         +
+      </button>
+      <button className="add-button1" onClick={() => setIsAddingNote(true)}>
+        
       </button>
     </div>
   );
