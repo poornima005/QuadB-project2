@@ -1,3 +1,4 @@
+/* Root Variables for Light and Dark Themes */
 :root {
     --primary-color: #6C63FF;
     --secondary-color: #6c757d;
@@ -29,9 +30,10 @@
     --add-button-bg: #444444;
     --add-button-text: #ffffff;
     --background: #333333;
-    --edit:#CDCDCD;
+    --edit: #CDCDCD;
 }
 
+/* Main Container Styles */
 .main-css {
     background-color: var(--background-color);
 }
@@ -42,12 +44,13 @@
     padding: 20px;
 }
 
+/* Heading */
 h1 {
     color: var(--text-color);
     text-align: center;
 }
 
-/* Combined Search Bar Styles */
+/* Search Bar Styles */
 .search-bar {
     display: flex;
     align-items: center;
@@ -84,6 +87,7 @@ h1 {
     margin-right: -5px;
 }
 
+/* Note List and Item Styles */
 .note-list {
     list-style: none;
     padding: 0;
@@ -155,7 +159,7 @@ h1 {
 }
 
 #canbutton {
-    margin-right: 130px;
+    margin-right: 100px;
     color: var(--primary-color);
     background-color: var(--background-color);
     border: 1px solid var(--primary-color);
@@ -166,7 +170,14 @@ h1 {
     background-color: var(--primary-color);
     color: var(--button-text);
 }
-
+.empty-list-message{
+    margin-top: 40px;
+    margin-left: 50px
+}
+.emp{
+    margin-left: 100px;
+    margin-top: 20px;
+}
 /* Add Button */
 .add-button {
     display: block;
@@ -176,7 +187,7 @@ h1 {
     color: var(--button-text);
     border: none;
     cursor: pointer;
-    margin-top: 60%;
+    margin-top: 50%;
     margin-left: 110%;
     height: 50px;
     width: 50px;
@@ -185,93 +196,101 @@ h1 {
     font-size: 30px;
     position: relative;
 }
-.add-button1 {
-    display: block;
-    text-align: center;
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: var(--button-text);
-    border: none;
-    cursor: pointer;
-    margin-top: 70%;
-    margin-left: 110%;
-    height: px;
-    width: 0px;
-    padding-top: 8px;
-    border-radius: 50%;
-    font-size: 30px;
-    position: relative;
-}
-.hrline {
-    border: 1px solid var(--primary-color);
-    margin: 10px 0;
+
+/* Responsive Styles for Different Screen Sizes */
+@media only screen and (max-width: 1280px) {
+    .todo-list-container {
+        max-width: 600px;
+    }
+    
+    .new-note-modal {
+        width: 50%;
+        height: 30%;
+    }
+    
+    .add-button {
+        margin-top: 50%;
+        margin-left: 90%;
+    }
+    
+    .search-bar input {
+        width: 80%;
+    }
+    
+    .modal-buttons button {
+        margin-top: 20px;
+    }
+    #canbutton{
+        margin-right: 100px;
+    }
 }
 
-.emp {
-    color: var(--text-color);
-    margin-left: 80px;
-}
+@media only screen and (max-width: 720px) {
+    .todo-list-container {
+        max-width: 350px;
+        padding: 10px;
+    }
 
-/* Dropdown */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+    .new-note-modal {
+        width: 80%;
+        height: 25%;
+    }
 
-.dropdown-menu {
-    display: block;
-    position: absolute;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    margin-top: 5px;
-    padding: 10px;
-    z-index: 1;
-    width: 150px;
-}
+    .add-button {
+        margin-top: 40%;
+        margin-left: 75%;
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+    }
 
-.dropdown-menu li {
-    list-style: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 16px;
+    .search-bar input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
 }
-.edit{
-    justify-content: right;
-    color: var(--edit);
-}
-.note-actions {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-left: auto;
-  }
-  .pagination-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
+/* Media query for 1280x720 resolution */
+@media screen and (max-width: 1280px) and (max-height: 720px) {
+    /* Fix for the cancel button */
+    .modal-buttons #canbutton {
+      margin-left: 50px; /* Adjust this to properly align */
+    }
   
-  .prev-button, .next-button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
+    /* Fix for the plus (add) button */
+    .add-button {
+      margin-top: 40%; /* Adjust to position higher on the screen */
+      margin-left: 90%; /* Adjust to position properly horizontally */
+    }
   
-  .prev-button:disabled, .next-button:disabled {
-    background-color: #c7c7c7;
-    cursor: not-allowed;
-  }
+    .add-button1 {
+      margin-top: 45%; /* Adjust the second button's position */
+      margin-left: 90%; /* Adjust for alignment */
+    }
   
-  .prev-button:hover:not(:disabled), .next-button:hover:not(:disabled) {
-    background-color: var(--primary-color);
+    /* Ensure other elements adjust to screen size */
+    .todo-list-container {
+      max-width: 300px; /* Reduce the width slightly */
+      padding: 15px;
+    }
+  
+    .new-note-modal {
+      top: 20%;
+      left: 50%;
+      width: 90%; /* Adjust width to fit the screen better */
+      height: auto;
+    }
+    
+    .pagination-controls {
+      flex-direction: column;
+    }
+  
+    .search-bar input {
+      width: 100%;
+    }
+  
+    .dropdown-menu {
+      width: auto;
+    }
   }
   
