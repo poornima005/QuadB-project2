@@ -5,17 +5,37 @@ import { faMoon, faEdit, faTrash, faChevronDown } from '@fortawesome/free-solid-
 import empty from "./empty.png";
 
 function Home() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(() => {
+    // Fetch notes from localStorage initially
+    const savedNotes = localStorage.getItem('notes');
+    return savedNotes ? JSON.parse(savedNotes) : [];
+  });
+  
   const [isAddingNote, setIsAddingNote] = useState(false);
   const [newNote, setNewNote] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    // Fetch darkMode from localStorage initially
+    const savedDarkMode = localStorage.getItem('darkMode');
+    return savedDarkMode ? JSON.parse(savedDarkMode) : false;
+  });
+  
   const [filter, setFilter] = useState('All');
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [isEditNoteModalOpen, setIsEditNoteModalOpen] = useState(false);
   const [noteToEdit, setNoteToEdit] = useState({});
-  const [currentPage, setCurrentPage] = useState(1); // For pagination
-  const notesPerPage = 4; // Changed to 4 notes per page
+  const [currentPage, setCurrentPage] = useState(1);
+  const notesPerPage = 4;
+
+  // Store notes in localStorage whenever the notes state changes
+  useEffect(() => {
+    localStorage.setItem('notes', JSON.stringify(notes));
+  }, [notes]);
+
+  // Store dark mode preference in localStorage
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  }, [darkMode]);
 
   const handleAddNote = () => {
     if (newNote.trim() !== '') {
@@ -75,7 +95,6 @@ function Home() {
     return true;
   });
 
-  // Pagination logic
   const indexOfLastNote = currentPage * notesPerPage;
   const indexOfFirstNote = indexOfLastNote - notesPerPage;
   const currentNotes = filteredNotes.slice(indexOfFirstNote, indexOfLastNote);
@@ -92,17 +111,6 @@ function Home() {
       setCurrentPage(currentPage - 1);
     }
   };
-
-  useEffect(() => {
-    const storedDarkMode = localStorage.getItem('darkMode');
-    if (storedDarkMode !== null) {
-      setDarkMode(JSON.parse(storedDarkMode));   
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(darkMode));
-  }, [darkMode]);
 
   return (
     <div className="main-css todo-list-container" data-theme={darkMode ? 'dark' : 'light'}>
@@ -191,7 +199,6 @@ function Home() {
             ))}
           </ul>
 
-          {/* Pagination controls */}
           <div className="pagination-controls">
             <button
               className="prev-button"
@@ -213,9 +220,6 @@ function Home() {
       
       <button className="add-button" onClick={() => setIsAddingNote(true)}>
         +
-      </button>
-      <button className="add-button1" onClick={() => setIsAddingNote(true)}>
-        
       </button>
     </div>
   );

@@ -248,7 +248,19 @@ h1 {
         width: 100%;
         margin-bottom: 10px;
     }
-    
+    .prev-button, .next-button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 10px;
+        height: 30px;
+        width: 90px;
+      }
+      .prev-button{
+        margin-right: 50px;
+      }
 }
 /* Media query for 1280x720 resolution */
 @media screen and (max-width: 1280px) and (max-height: 720px) {
@@ -294,3 +306,39 @@ h1 {
     }
   }
   
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .prev-button, .next-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .prev-button:disabled, .next-button:disabled {
+    background-color: #c7c7c7;
+    cursor: not-allowed;
+  }
+  
+  .prev-button:hover:not(:disabled), .next-button:hover:not(:disabled) {
+    background-color: #45a049;
+  }
+  .edit{
+    justify-content: right;
+    color: var(--edit);
+}
+.note-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+  }  
