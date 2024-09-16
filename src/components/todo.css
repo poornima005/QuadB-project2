@@ -1,9 +1,9 @@
 /* Root Variables for Light and Dark Themes */
 :root {
-    --primary-color: #6C63FF;
+    --primary-color: #6c63ff;
     --secondary-color: #6c757d;
     --background-color: #fff;
-    --background-color1: #EEF6EF;
+    --background-color1: #eef6ef;
     --text-color: #000;
     --button-bg: #007bff;
     --button-text: #ffffff;
@@ -13,14 +13,14 @@
     --add-button-bg: #007bff;
     --add-button-text: #ffffff;
     --background: #ffffff;
-    --edit: #CDCDCD;
-}
-
-.dark-theme {
-    --primary-color: #6C63FF;
+    --edit: #cdcdcd;
+  }
+  
+  .dark-theme {
+    --primary-color: #6c63ff;
     --secondary-color: #808080;
     --background-color: #121212;
-    --background-color1: #2C2C2C;
+    --background-color1: #2c2c2c;
     --text-color: #fff;
     --button-bg: #444444;
     --button-text: #ffffff;
@@ -30,49 +30,51 @@
     --add-button-bg: #444444;
     --add-button-text: #ffffff;
     --background: #333333;
-    --edit: #CDCDCD;
-}
-
-/* Main Container Styles */
-.main-css {
+    --edit: #cdcdcd;
+  }
+  
+  /* Main Container Styles */
+  .main-css {
     background-color: var(--background-color);
-}
-
-.todo-list-container {
+  }
+  .dark {
+    background-color: #121212;
+  }
+  .todo-list-container {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-}
-
-/* Heading */
-h1 {
+  }
+  
+  /* Heading */
+  h1 {
     color: var(--text-color);
     text-align: center;
-}
-
-/* Search Bar Styles */
-.search-bar {
+  }
+  
+  /* Search Bar Styles */
+  .search-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-}
-
-.search-bar input {
+  }
+  
+  .search-bar input {
     flex-grow: 1;
     padding: 10px;
     border: 1px solid var(--primary-color);
     border-radius: 5px;
     max-width: 100%;
-}
-
-.search-bar .buttons {
+  }
+  
+  .search-bar .buttons {
     display: flex;
     align-items: center;
-}
-
-.search-bar button {
+  }
+  
+  .search-bar button {
     padding: 10px;
     margin-left: 10px;
     background-color: var(--primary-color);
@@ -80,50 +82,51 @@ h1 {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-}
-
-#button1, #button2 {
+  }
+  
+  #button1,
+  #button2 {
     height: 35px;
     margin-right: -5px;
-}
-
-/* Note List and Item Styles */
-.note-list {
+  }
+  
+  /* Note List and Item Styles */
+  .note-list {
     list-style: none;
     padding: 0;
-}
-
-.note-item {
+  }
+  
+  .note-item {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
     padding: 10px;
     color: var(--text-color);
     border: none;
-}
-
-.note-item input {
+  }
+  
+  .note-item input {
     color: var(--text-color);
     margin-right: 10px;
-}
-
-.note-item button {
+  }
+  
+  .note-item button {
     background-color: transparent;
     border: none;
     cursor: pointer;
-}
-
-.note-item button svg {
+  }
+  
+  .note-item button svg {
     fill: red;
-}
-
-.completed {
+  }
+  
+  .completed {
     text-decoration: line-through;
     color: gray;
-}
-
-/* New Note Modal */
-.new-note-modal {
+  }
+  
+  /* New Note Modal */
+  .new-note-modal {
     position: fixed;
     top: 30%;
     left: 45%;
@@ -134,52 +137,54 @@ h1 {
     height: 20%;
     width: 20%;
     border-radius: 5px;
-}
-
-.new-note-modal input {
+  }
+  
+  .new-note-modal input {
     width: 90%;
     padding: 10px;
     background-color: var(--background-color);
     border: 1px solid var(--primary-color);
     border-radius: 5px;
     color: var(--text-color);
-}
-
-.modal-buttons {
+  }
+  
+  .modal-buttons {
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
-}
-
-.modal-buttons button {
+  }
+  
+  .modal-buttons button {
     padding: 10px;
     margin-top: 50px;
     border-radius: 5px;
     cursor: pointer;
-}
-
-#canbutton {
+  }
+  
+  #canbutton {
     margin-right: 100px;
     color: var(--primary-color);
     background-color: var(--background-color);
     border: 1px solid var(--primary-color);
-}
-
-#appbutton {
+  }
+  
+  #appbutton {
     margin-right: 20px;
     background-color: var(--primary-color);
     color: var(--button-text);
-}
-.empty-list-message{
+  }
+  .empty-list-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin-top: 40px;
-    margin-left: 50px
-}
-.emp{
-    margin-left: 100px;
+  }
+  .emp {
     margin-top: 20px;
-}
-/* Add Button */
-.add-button {
+  }
+  /* Add Button */
+  .add-button {
     display: block;
     text-align: center;
     padding: 10px;
@@ -194,131 +199,86 @@ h1 {
     padding-top: 8px;
     border-radius: 50%;
     font-size: 30px;
+    margin-bottom: 2.8rem;
     position: relative;
-}
-
-/* Responsive Styles for Different Screen Sizes */
-@media only screen and (max-width: 1280px) {
+  }
+  
+  /* Responsive Styles for Different Screen Sizes */
+  @media only screen and (max-width: 1280px) {
     .todo-list-container {
-        max-width: 600px;
+      max-width: 900px;
     }
-    
+  
     .new-note-modal {
-        width: 50%;
-        height: 30%;
+      width: 30%;
+      height: 20%;
     }
-    
+  
     .add-button {
-        margin-top: 50%;
-        margin-left: 90%;
+      margin-top: 50%;
+      margin-left: 90%;
     }
-    
+  
     .search-bar input {
-        width: 80%;
+      width: 50%;
     }
-    
+  
     .modal-buttons button {
-        margin-top: 20px;
+      margin-top: 20px;
     }
-    #canbutton{
-        margin-right: 100px;
+    #canbutton {
+      margin-right: 100px;
     }
-    .prev-button, .next-button {
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 10px;
-        height: 35px;
-        width: 100px;
-       
-      }
-      .next-button{
-        margin-top: 90px;
-      }
-     
-    
-   
-}
-
-@media only screen and (max-width: 720px) {
+    .prev-button,
+    .next-button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 10px;
+      height: 35px;
+      width: 100px;
+    }
+    .next-button {
+      margin-top: 90px;
+    }
+  }
+  
+  @media only screen and (max-width: 720px) {
     .todo-list-container {
-        max-width: 350px;
-        padding: 10px;
-    }
-
-    .new-note-modal {
-        width: 80%;
-        height: 25%;
-    }
-
-    .add-button {
-        margin-top: 40%;
-        margin-left: 75%;
-        width: 40px;
-        height: 40px;
-        font-size: 25px;
-    }
-
-    .search-bar input {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .prev-button, .next-button {
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 10px;
-        height: 30px;
-        width: 90px;
-        margin-top: 30px;
-      }
-     
-}
-/* Media query for 1280x720 resolution */
-@media screen and (max-width: 1280px) and (max-height: 720px) {
-    /* Fix for the cancel button */
-    .modal-buttons #canbutton {
-      margin-left: 90px; /* Adjust this to properly align */
-    }
-  
-    /* Fix for the plus (add) button */
-    .add-button {
-      margin-top: 40%; /* Adjust to position higher on the screen */
-      margin-left: 90%; /* Adjust to position properly horizontally */
-    }
-  
-    .add-button1 {
-      margin-top: 45%; /* Adjust the second button's position */
-      margin-left: 90%; /* Adjust for alignment */
-    }
-  
-    /* Ensure other elements adjust to screen size */
-    .todo-list-container {
-      max-width: 300px; /* Reduce the width slightly */
-      padding: 15px;
+      max-width: 350px;
+      padding: 10px;
     }
   
     .new-note-modal {
-      top: 30%;
-      left: 50%;
-      width: 20%; /* Adjust width to fit the screen better */
-      height: auto;
+      width: 80%;
+      height: 25%;
     }
-    
-    .pagination-controls {
-      flex-direction: column;
+  
+    .add-button {
+      margin-top: 40%;
+      margin-left: 75%;
+      width: 40px;
+      height: 40px;
+      font-size: 25px;
     }
   
     .search-bar input {
-      width: 100%;
+      width: 90%;
+      margin-bottom: 10px;
     }
-  
-    .dropdown-menu {
-      width: auto;
+    .prev-button,
+    .next-button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 10px;
+      height: 30px;
+      width: 90px;
+      margin-top: 30px;
     }
   }
   
@@ -329,10 +289,11 @@ h1 {
     margin-top: 20px;
   }
   
-  .prev-button, .next-button {
+  .prev-button,
+  .next-button {
     padding: 10px 20px;
     margin: 0 10px;
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
     border: none;
     border-radius: 5px;
@@ -340,21 +301,46 @@ h1 {
     font-size: 16px;
   }
   
-  .prev-button:disabled, .next-button:disabled {
+  .prev-button:disabled,
+  .next-button:disabled {
     background-color: #c7c7c7;
     cursor: not-allowed;
   }
   
-  .prev-button:hover:not(:disabled), .next-button:hover:not(:disabled) {
+  .prev-button:hover:not(:disabled),
+  .next-button:hover:not(:disabled) {
     background-color: #45a049;
   }
-  .edit{
+  .edit {
     justify-content: right;
     color: var(--edit);
-}
-.note-actions {
+  }
+  .note-actions {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-left: auto;
-  }  
+  }
+  @media screen and (max-width: 1280px) and (max-height: 720px) {
+    /* ... (other changes) */
+  
+    .search-bar {
+      flex-direction: column; /* Stack search bar elements vertically */
+    }
+  
+    .search-bar input {
+      margin-bottom: 10px; /* Add spacing below the search input */
+    }
+  
+    .search-bar .buttons {
+      display: flex; /* Keep buttons in a row */
+      justify-content: space-between; /* Distribute buttons evenly */
+      align-items: center;
+    }
+  
+    #button1,
+    #button2 {
+      margin-right: 10px; /* Add spacing between buttons */
+    }
+  }
+  
