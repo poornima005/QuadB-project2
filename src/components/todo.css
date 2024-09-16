@@ -223,6 +223,23 @@ h1 {
     #canbutton{
         margin-right: 100px;
     }
+    .prev-button, .next-button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 10px;
+        height: 35px;
+        width: 100px;
+       
+      }
+      .next-button{
+        margin-top: 90px;
+      }
+     
+    
+   
 }
 
 @media only screen and (max-width: 720px) {
@@ -257,16 +274,15 @@ h1 {
         font-size: 10px;
         height: 30px;
         width: 90px;
+        margin-top: 30px;
       }
-      .prev-button{
-        margin-right: 50px;
-      }
+     
 }
 /* Media query for 1280x720 resolution */
 @media screen and (max-width: 1280px) and (max-height: 720px) {
     /* Fix for the cancel button */
     .modal-buttons #canbutton {
-      margin-left: 50px; /* Adjust this to properly align */
+      margin-left: 90px; /* Adjust this to properly align */
     }
   
     /* Fix for the plus (add) button */
@@ -287,9 +303,9 @@ h1 {
     }
   
     .new-note-modal {
-      top: 20%;
+      top: 30%;
       left: 50%;
-      width: 90%; /* Adjust width to fit the screen better */
+      width: 20%; /* Adjust width to fit the screen better */
       height: auto;
     }
     
